@@ -35,6 +35,6 @@ class Cross_loss(nn.Module):
         loss_hr_dis1 = self.lossfunc_HR(hrf1, hr[idx1, :]);
         loss_hr_dis2 = self.lossfunc_HR(hrf2, hr[idx2, :]);
 
-        loss = self.lambda_hr * (loss_hr1 + loss_hr2) / 2 + self.lambda_fhr * (loss_fn1 + loss_fn2) / 2 + self.lambda_fn * (loss_fn1 + loss_fn2) / 2;
+        loss = self.lambda_hr * (loss_hr1 + loss_hr2) / 2 + self.lambda_fhr * (loss_fhr1 + loss_fhr2) / 2 + self.lambda_fn * (loss_fn1 + loss_fn2) / 2;
 
         return loss, loss_hr1, loss_hr2, loss_fhr1, loss_fhr2, loss_fn1, loss_fn2, loss_hr_dis1, loss_hr_dis2
