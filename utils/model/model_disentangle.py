@@ -159,7 +159,7 @@ class HR_disentangle_cross(nn.Module):
         imgf1 = self.encoder_decoder.decoder(featf1);
         imgf2 = self.encoder_decoder.decoder(featf2);
 
-        feat_hrf1, feat_nf1, hrf1, img_outf1, ecg1 = self.encoder_decoder(imgf1);
-        feat_hrf2, feat_nf2, hrf2, img_outf2, ecg2 = self.encoder_decoder(imgf2);
+        feat_hrf1, feat_nf2, hrf1, img_outf1, ecg1 = self.encoder_decoder(imgf1);
+        feat_hrf2, feat_nf1, hrf2, img_outf2, ecg2 = self.encoder_decoder(imgf2);
 
         return feat_hr, feat_n, hr, img_out, feat_hrf1, feat_nf1, hrf1, idx1, feat_hrf2, feat_nf2, hrf2, idx2, ecg, ecg1, ecg2
