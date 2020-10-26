@@ -78,7 +78,7 @@ lossfunc_cross = Cross_loss(lambda_cross_fhr = lambda_cross_fhr, lambda_cross_fn
 lossfunc_ecg = Neg_Pearson(downsample_mode = 0);
 lossfunc_SNR = SNR_loss(clip_length = video_length, loss_type = 7);
 
-optimizer = torch.optim.Adam([{'params': net.encoder_decoder.parameters(), 'lr': 0.0005}]);
+optimizer = torch.optim.Adam([{'params': net.parameters(), 'lr': 0.0005}]);
 
 def train():
     net.train();
