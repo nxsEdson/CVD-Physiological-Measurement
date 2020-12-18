@@ -126,7 +126,7 @@ def test():
     net.eval()
     test_loss = 0;
 
-    for (data, bpm, fps, bvp, idx) in test_loader:
+    for (data, hr, fps, bvp, idx) in test_loader:
 
         data = Variable(data);
         hr = Variable(hr.view(-1,1));
