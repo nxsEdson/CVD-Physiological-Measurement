@@ -132,7 +132,7 @@ def test():
         hr = Variable(hr.view(-1,1));
         data, hr = data.cuda(), hr.cuda();
 
-        feat_hr, feat_n, output, img_out, feat_hrf1, feat_nf1, hrf1, idx1, feat_hrf2, feat_nf2, hrf2, idx2, ecg, ecg1, ecg2 = net(data, epoch);
+        feat_hr, feat_n, output, img_out, feat_hrf1, feat_nf1, hrf1, idx1, feat_hrf2, feat_nf2, hrf2, idx2, ecg, ecg1, ecg2 = net(data);
         loss = lossfunc_HR(output, hr);
 
         test_loss += loss.item();
